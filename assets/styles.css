@@ -44,23 +44,52 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);  /* Chrome, Safari Support */
   -webkit-perspective: 1000;
   -webkit-transform-style: preserve-3d;
-  -moz-transform: translate(0);
+  transform: translate(0px, 0px, 0px); /* IE 10 support */
+  transform: perspective(500px);
+  -moz-transform: translate(0); /* Firefox Support */
   -moz-perspective: 1000;
   -moz-transform-style: preserve-3d;
 }
 
 .slides > article {
-  
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  width: 900px;
+  height: 700px;
+  left: 50%;
+  top: 50%;
+  margin-left: -450px;
+  margin-top: -350px;
+  padding: 40px 60px;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 20px black;
+  -o-transition: all .3s ease-out; /* Opera */
+  -moz-transition: all .3s ease-out; /*Firefox*/
+  -webkit-transition: all .3s ease-out; /*Chrome,Safari*/
+  transition: all .3s ease-out;/*IE10*/
 }
 
 .slides.layout-widescreen > article {
-  
+  width: 1100px;
+  margin-left: -550px;
 }
-.slides.layout-faux-widescreen > article {
-  
+
+.slides.layout-fake-widescreen > article {
+  width: 1100px;
+  margin-left: -550px;
+  padding: 40px 160px;
 }
 
 .slides > article:not(.nobackground):not(.biglogo):not(.fill) {
