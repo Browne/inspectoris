@@ -1,0 +1,51 @@
+::selection {
+  color: white;
+  background-color: #fccc02; /*1c88ff*/
+  text-shadow: none;
+}
+
+:-webkit-full-screen {
+
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: block !important;
+  height: 100%;
+  min-height: 740px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #fff;
+  background-image: -moz-radial-gradient(50% 30% 90deg, circle, #b1dfff 0%, #0c54ab 600px);
+  background-image: -webkit-gradient(radial, 50% 50%, 200, 50% 50%, 600, from(#b1dfff), to(#0c54ab));
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slides {
+  
+}
+
+.slides > article {
+  
+}
+
+.slides.layout-widescreen > article {
+  
+}
+.slides.layout-faux-widescreen > article {
+  
+}
+
+.slides > article:not(.nobackground):not(.biglogo):not(.fill) {
+  
+}
+.slides.nobackground article:not(.fill) {
+  
+}
