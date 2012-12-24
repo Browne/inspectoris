@@ -3,7 +3,7 @@ window.slidesConfig = window.slidesConfig || {
   settings : {
     useBuilds: true,
     useGDDBranding: true
-    //hashtag: '#html5'
+    //hashtag: '#Epic'
   },
   info: {
     // Personal info
