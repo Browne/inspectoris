@@ -39,9 +39,11 @@ Please contact the developer by email.
 
 Credits and Acknowledgements
 ----------------------------
-I'd like to thank GitHub for giving me some hosting space.
+* Google for providing some framework javascript that was written in 2011
+* caniuse.com for letting me know what CSS3 effects different browsers support
+* GitHub for giving me some hosting space.
 
 Changelog
 ---------
-Currently there are no changes worth noting.
+24/12/12 A basic working copy has been created.
 
