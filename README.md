@@ -46,4 +46,5 @@ Credits and Acknowledgements
 Changelog
 ---------
 24/12/12 A basic working copy has been created.
+25/12/12 Updates to add the "Not so creative" logo
 
