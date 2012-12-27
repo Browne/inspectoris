@@ -1,3 +1,13 @@
+/*
+Author: Eliot Brown on behalf on 'Not so creative'
+Licensed under Mozilla Public License Version 2 (MPLv2), a copy of that license is distributed
+with this package, a copy can also be found: http://www.mozilla.org/MPL/2.0/
+
+ToDo: Add more Firefox support
+ToDo: Add more Opera support
+ToDo: Testing on Windows systems with IE9 and IE10
+*/
+
 ::selection {
   color: white;
   background-color: #fccc02; /*1c88ff*/
@@ -595,15 +605,13 @@ article.fill {
 
 /* Beyond this point is all extremely experimental */
 /*-----------------------------------------------------------------------*/
-article.fill iframe {
+
+article.fill img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-
-  border: 0;
-  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
 
   border-radius: 10px;
   -o-border-radius: 10px;
@@ -611,13 +619,200 @@ article.fill iframe {
   -webkit-border-radius: 10px;
 
   z-index: -1;
+
+}
+img.centered {
+  margin: 0 auto;
+  display: block;
 }
 
-article.fill {
-  background-repeat: no-repeat;
-  background-size: cover;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+th {
+  font-weight: 600;
+  text-align: left;
+}
+td,
+th {
+  border: 1px solid rgb(224, 224, 224);
+  padding: 5px 10px;
+  vertical-align: top;
 }
 
+.source {
+  position: absolute;
+  left: 60px;
+  top: 644px;
+  padding-right: 175px;
+
+  font-size: 12px;
+  letter-spacing: 0;  
+  line-height: 18px;
+  opacity: 0.5;
+}
+.source a {
+  color: inherit;
+  text-decoration: none;
+}
+.source a:hover {
+  text-decoration: underline;
+}
+q {
+  display: block;
+  font-size: 60px;
+  line-height: 72px;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+q::before {
+  content: '“';
+  
+  position: absolute;
+  display: inline-block;
+  margin-left: -2.1em;
+  width: 2em;
+  text-align: right;
+  
+  font-size: 90px;
+  color: rgb(192, 192, 192);
+}
+q::after {
+  content: '”';
+
+  position: absolute;  
+  margin-left: .1em;
+
+  font-size: 90px;
+  color: rgb(192, 192, 192);  
+}
+div.author {
+  text-align: right;  
+  font-size: 40px;
+  
+  margin-top: 20px;
+  margin-right: 150px;    
+}
+div.author::before {
+  content: '—';
+}
+
+/* Size variants */
+
+article.smaller p,
+article.smaller ul {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+article.smaller table {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+article.smaller pre {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+article.smaller q {
+  font-size: 40px;
+  line-height: 48px;
+}
+article.smaller q::before,
+article.smaller q::after {
+  font-size: 60px;
+}
+
+/* Builds */
+
+.build > * {
+  transition: opacity 0.5s ease-in-out 0.2s;
+  -o-transition: opacity 0.5s ease-in-out 0.2s;
+  -moz-transition: opacity 0.5s ease-in-out 0.2s;
+  -webkit-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.to-build {
+  opacity: 0;
+}
+
+.build-fade {
+  opacity: 0.5;
+}
+
+.build-fade:hover {
+  opacity: 1.0;
+}
+
+/* Pretty print */
+
+.prettyprint .str, /* string content */
+.prettyprint .atv { /* a markup attribute value */
+  color: rgb(0, 138, 53); 
+}  
+
+.prettyprint .kwd, /* a keyword */
+.prettyprint .tag { /* a markup tag name */
+  color: rgb(0, 102, 204);
+}
+
+.prettyprint .com { /* a comment */
+  color: rgb(127, 127, 127); 
+  font-style: italic; 
+} 
+
+.prettyprint .lit { /* a literal value */
+  color: rgb(127, 0, 0);
+}  
+
+.prettyprint .pun, /* punctuation, lisp open bracket, lisp close bracket */
+.prettyprint .opn, 
+.prettyprint .clo { 
+  color: rgb(127, 127, 127); 
+}
+
+.prettyprint .typ, /* a type name */
+.prettyprint .atn, /* a markup attribute name */ 
+.prettyprint .dec, 
+.prettyprint .var { /* a declaration; a variable name */
+  color: rgb(127, 0, 127);
+}
+
+with-notes .note {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+input, button {
+  vertical-align: middle;
+}
+
+.centered {
+  text-align: center;
+}
+
+h2.right {
+  text-align: right;
+}
+
+.rounded {
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.reflect {
+  -webkit-box-reflect: below 3px -webkit-linear-gradient(rgba(255,255,255,0) 85%, white 150%);
+  -moz-box-reflect: below 3px -moz-linear-gradient(rgba(255,255,255,0) 85%, white 150%);
+  -o-box-reflect: below 3px -o-linear-gradient(rgba(255,255,255,0) 85%, white 150%);
+  -ms-box-reflect: below 3px -ms-linear-gradient(rgba(255,255,255,0) 85%, white 150%);
+  box-reflect: below 3px linear-gradient(rgba(255,255,255,0) 85%, white 150%);
+}
+
+/* ===== SLIDE CONTENT ===== */
 #title-slide > div {
   font-size: 30px;
   margin-top: 200px;
