@@ -40,6 +40,7 @@ Please contact the developer by email.
 Credits and Acknowledgements
 ----------------------------
 * Google for providing some framework javascript that was written in 2011
+* Google for providing the open source prettify javascript framework
 * caniuse.com for letting me know what CSS3 effects different browsers support
 * GitHub for giving me some hosting space.
 
@@ -47,4 +48,5 @@ Changelog
 ---------
 24/12/12 A basic working copy has been created.
 25/12/12 Updates to add the "Not so creative" logo
+27/12/12 Major style changes and code updates.
 
