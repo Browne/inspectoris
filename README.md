@@ -51,3 +51,4 @@ Changelog
 25/12/12 Updates to add the "Not so creative" logo
 27/12/12 Major style changes and code updates
 07/01/12 Major updates to stylesheets for additional functionality, work on Geolocation support
+09/01/12 Updates to include an internet connectivity check before the slides
