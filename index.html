@@ -15,6 +15,13 @@
 
       <section class="slides layout-regular">
     
+
+      <article id="fill">
+          <iframe src="http://eliotbrown.co.uk/perm/assets/online.html"></iframe>
+          <div class="slide-area" id="prev-slide-area"></div>
+          <div class="slide-area" id="next-slide-area"></div>
+      </article>
+
         <article id="title-slide">
           <div>
             <div data-config-logo></div>
@@ -25,6 +32,8 @@
             </p>
             <img data-config-map class="rounded" title="Yes it's geolocation" alt="Geolocation!">
           </div>
+          <div class="slide-area" id="prev-slide-area"></div>
+          <div class="slide-area" id="next-slide-area"></div>
         </article>
 
         <article id="second-slide">
@@ -36,6 +45,8 @@
               Body content here...
             </p>
           </div>
+          <div class="slide-area" id="prev-slide-area"></div>
+          <div class="slide-area" id="next-slide-area"></div>
         </article>
 
         <article>
@@ -44,10 +55,72 @@
             <p class="info">
               Your text here...
             </p>
-          </div>  
+          </div> 
+          <div class="slide-area" id="prev-slide-area"></div>
+          <div class="slide-area" id="next-slide-area"></div> 
         </article>
 
-      </section>  
+      </section>
+
+      <script>
+  (function() {
+    var slide = document.getElementById('slide-requestanimationframe');
+    var radios = slide.querySelectorAll('input[type=radio]');
+    var output = slide.querySelector('.output');
+    var last = new Date().getTime();
+    var active = false;
+    var oldtitle = document.title;
+
+    function getState() {
+      var radio = slide.querySelector('input[type=radio]:checked');
+      var state = radio ? radio.value : false;
+      return state;
+    };
+
+    function draw(future) {
+      var now = new Date().getTime();
+      var state = getState();
+      if (active && state) {
+        var ms = now - last;
+        var hz = Math.round(1000 / ms);
+        output.innerHTML = 'Using <strong>' + state + '</strong>:<br>' +
+                           ms + 'ms elapsed since last frame (' +
+                           hz + 'hz)';
+        document.title = ms + 'ms';
+        last = now;
+        switch (state) {
+          case 'requestAnimationFrame':
+            window.requestAnimationFrame(draw, output);
+            break;
+          case 'setTimeout':
+            setTimeout(draw, 10);
+            break;
+        }
+      }
+    };
+    slide.addEventListener('slideenter', function() {
+      oldtitle = document.title;
+      if (getState()) {
+        active = true;
+        draw();
+      }
+    }, false);
+    slide.addEventListener('slideleave', function() {
+      active = false;
+      window.setTimeout(function() {
+        document.title = oldtitle;
+      }, 500);
+    }, false);
+    for (var i = 0, radio; radio = radios[i]; i++) {
+      radio.addEventListener('click', function() {
+        if (!active) {
+          active = true;
+          draw();
+        }
+      }, false);
+    }
+  })();
+  </script>  
 
     <script src="http://webintents.org/webintents.js" async></script>
     <script src="scripts/config.js"></script>
