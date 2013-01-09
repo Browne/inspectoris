@@ -25,13 +25,14 @@ There are no licensing exceptions
 
 Authors
 -------
-This project will be produced by:
+This project is produced by:
 
 1. Eliot Brown - <support@eliotbrown.co.uk>
 
 Known Bugs
 ----------
 At present there are no known bugs
+It is known that the geolocation isn't correctly working at present.
 
 Troubleshooting
 ---------------
@@ -48,5 +49,5 @@ Changelog
 ---------
 24/12/12 A basic working copy has been created.
 25/12/12 Updates to add the "Not so creative" logo
-27/12/12 Major style changes and code updates.
-
+27/12/12 Major style changes and code updates
+07/01/12 Major updates to stylesheets for additional functionality, work on Geolocation support
